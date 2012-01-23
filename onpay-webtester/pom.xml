@@ -204,7 +204,7 @@
 
 	</profiles>
 	<scm>
-		<connection>git://github.com/gordon-force-associates/onpay-webtester.git</connection>
+		<connection>scm:git:git://github.com/gordon-force-associates/onpay-webtester.git</connection>
 
 		<url>https://github.com/gordon-force-associates/onpay-webtester</url>
 	</scm>
