@@ -5,7 +5,6 @@
 	<groupId>com.forceassociates</groupId>
 	<artifactId>onpay-webtester</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>JBehave Stories</name>
 
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -205,13 +204,10 @@
 
 	</profiles>
 	<scm>
-		<connection>
-		scm:svn:http://192.168.123.168/code-repos/trunk/onpay-webtester
-		</connection>
+		<connection>git://github.com/gordon-force-associates/onpay-webtester.git</connection>
 
-		<developerConnection>
-		scm:svn:http://192.168.123.168/code-repos/trunk/onpay-webtester
-		</developerConnection>
-		<url>http://192.168.123.168/code-repos/trunk/onpay-webtester</url>
+		<url>https://github.com/gordon-force-associates/onpay-webtester</url>
 	</scm>
+	<description>jbehave example for BDD talks</description>
+	<name>onpay</name>
 </project>
