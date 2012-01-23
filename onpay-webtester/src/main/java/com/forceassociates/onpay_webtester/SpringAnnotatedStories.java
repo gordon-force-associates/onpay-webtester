@@ -24,7 +24,7 @@ import org.slf4j.LoggerFactory;
  * </code>
  * 
  * <p>
- * From with Eclipse, use a similar m2e goal or execute this class a JUnit4
+ * From with Eclipse, use the same m2e goal or execute this class a JUnit4
  * test. An initial m2e run might be required to copy all of the resources over
  * to the target/classes based destinations.
  * </p>
@@ -50,8 +50,8 @@ import org.slf4j.LoggerFactory;
  * <td>Configures the embedder class used by jUnit invocations. The pom.xml
  * declares the embedder for maven invocations.</td>
  * </table>
- * 
- * <table title="Spring Context File Descriptions" border="1">
+ * <p>Spring Context File Descriptions</p>
+ * <table border="1">
  * <tr>
  * <th>File</th>
  * <th>Purpose</th>
