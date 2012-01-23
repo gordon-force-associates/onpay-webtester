@@ -24,7 +24,7 @@ import org.slf4j.LoggerFactory;
  * </code>
  * 
  * <p>
- * From with Eclipse, use the same m2e goal or execute this class a JUnit4
+ * From within Eclipse, use the same m2e goal or execute this class a JUnit4
  * test. An initial m2e run might be required to copy all of the resources over
  * to the target/classes based destinations.
  * </p>
@@ -39,16 +39,26 @@ import org.slf4j.LoggerFactory;
  * <th>Purpose</th>
  * </tr>
  * <tr>
- * <td>@UsingSpring</td>
- * <td>Tells jbehave where to find Spring context files.</td>
+ * <td>@RunWith</td>
+ * <td>Tells jUnit which story runner to use. The SpringAnnotatedEmbedderRunner supports
+ * both running from maven and jUnit 4 within Eclipse.</td>
+ * </tr>
+ * <tr>
+ * <td>@Embedder</td>
+ * <td>Configures the embedder class which ties together the configuration, story to step matching
+ * and executing the stories.
+ * </td>
+ * </tr>
  * <tr>
  * <td>@Configure</td>
  * <td>Tells jbehave configuration is described as annotation parameters or in a
- * Spring context file.</td>
+ * Spring context file. The MostUsefulConfiguration class defines the default
+ * configuration if none is provided by the user</td>
+ * </tr>
  * <tr>
- * <td>@Embedder</td>
- * <td>Configures the embedder class used by jUnit invocations. The pom.xml
- * declares the embedder for maven invocations.</td>
+ * <td>@UsingSpring</td>
+ * <td>Tells jbehave where to find Spring context files.</td>
+ * </tr>
  * </table>
  * <p>Spring Context File Descriptions</p>
  * <table border="1">
@@ -58,32 +68,28 @@ import org.slf4j.LoggerFactory;
  * </tr>
  * <tr>
  * <td>configuration.xml</td>
- * <td>Parameters for the jbehave Configuration object.</td>
+ * <td>Parameters for the jbehave configuration object.</td>
+ * </tr>
  * <tr>
  * <td>my_steps.xml</td>
  * <td>Which Step classes to use.</td>
+ * </tr>
  * </table>
  * 
  * @author Gordon Force Jr. (gordon@force-associates.com)
  * 
+ * @see <a href="http://jbehave.org/reference/stable/configuration.html">jbehave configuration and embedders</a>
+ * @see <a href="http://jbehave.org/reference/stable/javadoc/core/org/jbehave/core/configuration/MostUsefulConfiguration.html">most useful configuration, aka, default configuration</a>
+ * @see <a href="http://jbehave.org/reference/stable/dependency-injection.html">jbehave dependency injection</a>
+ * @see <a href="http://jbehave.org/reference/stable/running-stories.html">jbehave story runners</a>
  */
 
-// Instructs jbehave to build configurations from spring context files and to
-// execute stories using a jUnit test runner
 @RunWith(org.jbehave.core.junit.spring.SpringAnnotatedEmbedderRunner.class)
-
 @UsingEmbedder(embedder = Embedder.class, generateViewAfterStories = true, ignoreFailureInStories = true, ignoreFailureInView = true)
-
-//Empty inferes configuration exists either as defaults or within
-//Spring context files.
 @Configure()
-
-// tells jbehave which spring context files hold configuration and step class
-// declarations
 @UsingSpring(resources = {
 		"com/forceassociates/onpay_webtester/configuration.xml",
 		"com/forceassociates/onpay_webtester/my_steps.xml" })
-
 public class SpringAnnotatedStories extends InjectableEmbedder {
 
 	private Logger logger = LoggerFactory

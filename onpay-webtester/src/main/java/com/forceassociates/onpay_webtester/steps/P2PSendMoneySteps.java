@@ -12,10 +12,11 @@ import static com.forceassociates.onpay_webtester.util.VarArgConverters.asArray;
  * P2PSendMoney stories. Each method in this class matches to one or more steps 
  * defined in the stories. 
  * 
- * This class defines and uses a slfj class level logger at the TRACE level for
- * aid development.
+ * This class uses a slfj class level logger at the TRACE level to aid development
  * 
  * @author Gordon Force
+ * 
+ * @see <a href="http://jbehave.org/reference/stable/candidate-steps.html">Simple Step Candidate</a>
  * 
  */
 public class P2PSendMoneySteps  {

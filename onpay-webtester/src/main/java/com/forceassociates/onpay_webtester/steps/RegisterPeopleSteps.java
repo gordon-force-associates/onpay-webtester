@@ -17,10 +17,11 @@ import static com.forceassociates.onpay_webtester.util.VarArgConverters.asArray;
  * This example shows how to use the examples table to execute a story multiple times
  * with different data, e.g., how to register more than one user using the same story.
  * 
- * This class defines and uses a slfj class level logger at the TRACE level for
- * aid development.
+ * This class uses a slfj class level logger at the TRACE level to aid development.
  * 
  * @author Gordon Force
+ * 
+ * @see <a href="http://jbehave.org/reference/stable/parametrised-scenarios.html">Parameter driven scenarios</a>
  * 
  */
 public class RegisterPeopleSteps {
